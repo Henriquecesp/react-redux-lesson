@@ -1,6 +1,6 @@
-import { CHANGE_USER, LOGOUT } from "./userTypes"
+import { CHANGE_USER, LOGOUT } from './userTypes'
 
-export function changeUser(user){
+export function changeUser(user) {
   return {
     type: CHANGE_USER,
     info: "Change the current user",
@@ -8,9 +8,9 @@ export function changeUser(user){
   }
 }
 
-export function logout(){
+export function logout() {
   return {
     type: LOGOUT,
-    info: 'Logout the current user'
+    info: "Logout the current user",
   }
 }

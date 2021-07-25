@@ -1,12 +1,13 @@
-import { CHANGE_USER, LOGOUT } from "./userTypes";
+import { CHANGE_USER, LOGOUT } from './userTypes'
 
-const initialStateUser = {
-  user: "",
+const initialState = {
+  user: '',
   isLogged: false
 }
 
-const userReducer = (state = initialStateUser, action) => {
-  switch(action.type){
+// Reducer
+export default function userReducer (state = initialState, action) {
+  switch (action.type) {
     case CHANGE_USER:
       return {
         ...state,
@@ -20,8 +21,6 @@ const userReducer = (state = initialStateUser, action) => {
         isLogged: false
       }
     default:
-      return state;
+      return state
   }
 }
-
-export default userReducer;

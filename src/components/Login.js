@@ -1,20 +1,29 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { changeUser } from '../redux/user/userActions';
+import { Button, Form, Row, Col } from 'react-bootstrap';
+import {useDispatch} from 'react-redux'
+import {changeUser} from '../redux/user/userActions'
 
 const Login = () => {
-  const [name, setName] = React.useState('');
-  const dispatch = useDispatch()
+  const [name, setName] = useState('');
+  const dispatch = useDispatch();
 
   const handleLogin = () => {
     dispatch(changeUser(name))
   }
 
   return (
-    <div>
-      <input type="text" onChange={(e) => setName(e.target.value)}/>
-      <button onClick={handleLogin}>Login</button>
-    </div>
+    <Form>
+      <h1 className="mt-5">Login</h1>
+      <Row className="align-items-center">
+        <Col sm={6} className="my-1">
+          <Form.Control type="text" placeholder="Nome" onChange={(e) => setName(e.target.value)}/>
+        </Col>
+        <Col sm={6}>
+          <Button onClick={handleLogin}>Login</Button>
+        </Col>
+      </Row>
+      <hr />
+    </Form>
   );
 }
 
