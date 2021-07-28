@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 const User = () => {
-  const { user, isLogged } = useSelector(state => state.user)
-  console.log(isLogged)
+  const {name} = useSelector(state => state.user);
+
   return (
     <div>
-      <h1>Usuário: {user}</h1>
+      <h1>Usuário: {name}</h1>
     </div>
   );
 }

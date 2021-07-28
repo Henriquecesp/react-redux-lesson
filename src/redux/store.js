@@ -1,7 +1,8 @@
-import { createStore } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import rootReducer from './rootReducer';
+import { configureStore } from '@reduxjs/toolkit'
+import userReducer from './userSlice'
 
-const store = createStore(rootReducer, composeWithDevTools());
-
-export default store;
+export default configureStore({
+  reducer:{
+    user: userReducer,
+  }
+})
